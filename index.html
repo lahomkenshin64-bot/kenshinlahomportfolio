@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kenshin Lahom | IT Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0b0714;--panel:#150e24;--line:#2e1f4d;--text:#eae6f5;--mute:#9a8fb8;--y:#fcee0a;--c:#00f0ff;--m:#ff2a6d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));height:auto}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font:500 18px/1.6 'Rajdhani',system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px);z-index:50}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+.mono{font-family:'Share Tech Mono',monospace}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 20px;background:rgba(11,7,20,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.logo{font-weight:700;font-size:24px;letter-spacing:.08em;color:var(--y);background:none;border:0;cursor:pointer;padding:0;font-family:inherit}
+nav{display:flex;gap:6px 18px;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;color:var(--mute);font-size:16px}
+nav a:hover{color:var(--c)}
+main{max-width:980px;margin:0 auto;padding:0 20px}
+section{padding:72px 0 8px}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;min-height:78vh;padding-top:40px}
+.role{color:var(--c);font-size:17px;margin:0 0 8px}
+h1{font-size:clamp(46px,9vw,88px);line-height:.95;margin:0 0 18px;text-transform:uppercase;letter-spacing:.02em;position:relative}
+h1 span{display:block}
+h1 .g{color:var(--y);text-shadow:3px 0 var(--m),-3px 0 var(--c);animation:glitch 5s steps(1) 1.2s 2}
+@keyframes glitch{0%,92%,100%{text-shadow:3px 0 var(--m),-3px 0 var(--c);transform:none}94%{text-shadow:-6px 0 var(--m),6px 0 var(--c);transform:translateX(3px)}96%{text-shadow:6px 0 var(--m),-6px 0 var(--c);transform:translateX(-3px)}}
+.lead{max-width:48ch;color:var(--mute);margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 22px;text-decoration:none;font-weight:700;font-size:18px;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.b1{background:var(--y);color:#0b0714}
+.b2{background:transparent;color:var(--c);box-shadow:inset 0 0 0 2px var(--c)}
+.b1:hover{background:#fff}.b2:hover{background:rgba(0,240,255,.12)}
+.photo{aspect-ratio:4/5;background:linear-gradient(160deg,var(--panel),#1d1133);border:2px solid var(--c);clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,28px 100%,0 calc(100% - 28px));display:grid;place-items:center;color:var(--mute);text-align:center;padding:16px;font-size:15px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+h2{font-size:clamp(32px,5vw,46px);margin:0 0 6px;color:var(--text);border-left:6px solid var(--y);padding-left:14px;line-height:1.1}
+.tag{color:var(--m);font-size:15px;margin:0 0 4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:26px}
+.card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--c);padding:20px}
+.card h3{margin:0 0 8px;font-size:22px;color:var(--y)}
+.card p{margin:0;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1px solid var(--c);color:var(--c);padding:3px 12px;font-size:15px}
+.chip.s{border-color:var(--m);color:var(--m)}
+.car{position:relative;margin-top:26px}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:10px}
+.cert{flex:0 0 min(80%,340px);scroll-snap-align:start;background:var(--panel);border:1px solid var(--line);padding:12px}
+.cert .img{aspect-ratio:4/3;background:#1d1133;display:grid;place-items:center;color:var(--mute);font-size:14px;overflow:hidden}
+.cert img{width:100%;height:100%;object-fit:cover}
+.cert h3{margin:10px 0 0;font-size:20px;color:var(--y)}
+.arrows{display:flex;gap:10px;margin-top:10px}
+.arrows button{width:46px;height:42px;background:transparent;color:var(--y);border:2px solid var(--y);font-size:20px;cursor:pointer}
+.arrows button:hover{background:var(--y);color:#0b0714}
+.proj img{width:100%;display:block;margin-bottom:14px;border:1px solid var(--line)}
+.proj img.tall{max-height:420px;object-fit:cover;object-position:top}
+.cert .img{background:#fff}
+.cert img{object-fit:contain}
+.iss{margin:2px 0 0;font-size:14px;color:var(--c)}
+.contact li{margin:6px 0}
+.contact ul{list-style:none;padding:0;margin:18px 0 0}
+.contact b{color:var(--c);display:inline-block;min-width:84px}
+footer{margin-top:72px;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--mute);border-top:1px solid var(--line);font-size:15px}
+#breach{position:fixed;inset:0;z-index:100;background:#000;color:var(--c);display:none;align-items:center;justify-content:center;padding:24px;cursor:pointer}
+#breach.on{display:flex}
+#breach pre{margin:0;white-space:pre-wrap;font-size:clamp(15px,3.6vw,22px);line-height:1.7;max-width:640px}
+#breach h4{color:var(--m);font-size:clamp(28px,8vw,56px);margin:0 0 14px;letter-spacing:.06em}
+@media(max-width:720px){.hero{grid-template-columns:1fr;min-height:0}.photo{max-width:300px}header{padding:10px 14px}nav a{font-size:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}h1 .g{animation:none}}
+</style>
+</head>
+<body>
+<header>
+  <button class="logo" id="logo" aria-label="Home">KENSHIN.</button>
+  <nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certs">Certificates</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <p class="role mono">BSIT Student</p>
+    <h1><span>Kenshin</span><span class="g">Lahom</span></h1>
+    <p class="lead">I’m a BSIT student at North Eastern College, interested in technology, software development, and learning through practical projects.</p>
+    <div class="btns"><a class="btn b1" href="#projects">View my projects</a><a class="btn b2" href="#contact">Contact me</a></div>
+  </div>
+  <div class="photo" id="photo"><img src="photo.jpg" alt="Kenshin Lahom" style="object-position:80% 35%"></div>
+</section>
+
+<section id="about">
+  <p class="tag mono">About me</p>
+  <h2>Learning by building.</h2>
+  <div class="grid">
+    <div class="card"><h3>What I’m working toward</h3><p>Building practical technical skills and gaining experience through school and personal software projects.</p></div>
+    <div class="card"><h3>How I work</h3><p>I value communication, teamwork, attention to detail, and solving problems step by step.</p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <p class="tag mono">Skills</p>
+  <h2>Tools and strengths</h2>
+  <div class="grid">
+    <div class="card"><h3>Technical skills</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
+    <div class="card"><h3>Soft skills</h3><div class="chips"><span class="chip s">Communication</span><span class="chip s">Teamwork</span><span class="chip s">Time management</span><span class="chip s">Problem solving</span></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <p class="tag mono">Selected work</p>
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card proj"><img src="project-website.jpg" alt="Barangay Villasis E-Barangay Services website" loading="lazy"><h3>Barangay Villasis E-Barangay Services (Website)</h3><p>A web portal for Barangay Villasis, Santiago City. Residents can book a health center appointment, request official documents, file a report, and see barangay events online.</p><div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">HTML</span><span class="chip">CSS</span></div></div>
+    <div class="card proj"><img class="tall" src="project-app.jpg" alt="Barangay Villasis E-Barangay Services on mobile" loading="lazy"><h3>Barangay Villasis E-Barangay Services (Mobile view)</h3><p>The same barangay services, made easy to use on a phone. It has a dashboard, a services list, and a Book Now button for health center appointments.</p><div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">HTML</span><span class="chip">CSS</span></div></div>
+  </div>
+</section>
+
+<section id="certs">
+  <p class="tag mono">Professional development</p>
+  <h2>Certificates</h2>
+  <p class="lead" style="margin-top:10px">Use the arrows or swipe to browse.</p>
+  <div class="car">
+    <div class="track" id="track" tabindex="0" aria-label="Certificate gallery">
+      <div class="cert"><div class="img"><img src="tesda-1.jpg" alt="Microsoft AI Course: Azure AI Fundamentals" loading="lazy"></div><h3>Microsoft AI Course: Azure AI Fundamentals</h3><p class="iss mono">TESDA Online Program</p></div>
+      <div class="cert"><div class="img"><img src="ms-AA.jpg" alt="Get started with Microsoft Copilot" loading="lazy"></div><h3>Get started with Microsoft Copilot</h3><p class="iss mono">Microsoft</p></div>
+      <div class="cert"><div class="img"><img src="ms-BB.jpg" alt="Explore AI for All" loading="lazy"></div><h3>Explore AI for All</h3><p class="iss mono">Microsoft</p></div>
+      <div class="cert"><div class="img"><img src="ms-cc.jpg" alt="Explore AI basics" loading="lazy"></div><h3>Explore AI basics</h3><p class="iss mono">Microsoft</p></div>
+      <div class="cert"><div class="img"><img src="ms-dd.jpg" alt="Boost your productivity with Microsoft Copilot" loading="lazy"></div><h3>Boost your productivity with Microsoft Copilot</h3><p class="iss mono">Microsoft</p></div>
+      <div class="cert"><div class="img"><img src="tesda-2.jpg" alt="Microsoft Digital Literacy" loading="lazy"></div><h3>Microsoft Digital Literacy</h3><p class="iss mono">TESDA Online Program</p></div>
+      <div class="cert"><div class="img"><img src="tesda-3.jpg" alt="Practicing Data Privacy in the Workplace" loading="lazy"></div><h3>Practicing Data Privacy in the Workplace</h3><p class="iss mono">TESDA Online Program</p></div>
+      <div class="cert"><div class="img"><img src="tesda-4.jpg" alt="Microsoft Cybersecurity Course: Security, Compliance, and Identity Fundamentals" loading="lazy"></div><h3>Microsoft Cybersecurity Course: Security, Compliance, and Identity Fundamentals</h3><p class="iss mono">TESDA Online Program</p></div>
+      <div class="cert"><div class="img"><img src="tesda-5.jpg" alt="Wi-Fi 101 and Digital Thumbprint Program" loading="lazy"></div><h3>Wi-Fi 101 and Digital Thumbprint Program</h3><p class="iss mono">TESDA Online Program</p></div>
+      <div class="cert"><div class="img"><img src="cisco-cybersecurity.jpg" alt="Introduction to Cybersecurity" loading="lazy"></div><h3>Introduction to Cybersecurity</h3><p class="iss mono">Cisco Networking Academy</p></div>
+      <div class="cert"><div class="img"><img src="dict-6.jpg" alt="PRESS START: Game Development in Region 8" loading="lazy"></div><h3>PRESS START: Game Development in Region 8</h3><p class="iss mono">DICT Regional Office VIII</p></div>
+      <div class="cert"><div class="img"><img src="dict-7.jpg" alt="Don’t Get Hacked: Detect, Defend, and Secure Your Digital Life" loading="lazy"></div><h3>Don’t Get Hacked: Detect, Defend, and Secure Your Digital Life</h3><p class="iss mono">DICT Regional Office V</p></div>
+      <div class="cert"><div class="img"><img src="dict-8.jpg" alt="Navigating the Future: Introduction to AI and Digital Security" loading="lazy"></div><h3>Navigating the Future: Introduction to AI and Digital Security</h3><p class="iss mono">DICT Eastern Samar</p></div>
+    </div>
+    <div class="arrows"><button id="prev" aria-label="Previous">❮</button><button id="next" aria-label="Next">❯</button></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="tag mono">Contact</p>
+  <h2>Let’s connect.</h2>
+  <ul>
+    <li><b class="mono">Email</b> <a href="mailto:lahomkenshin64@gmail.com">lahomkenshin64@gmail.com</a></li>
+    <li><b class="mono">Location</b> Santiago City, Isabela</li>
+  </ul>
+  <div class="card" style="margin-top:22px"><h3>Career objective</h3><p>Seeking an entry-level opportunity where I can apply my communication, computer, and problem-solving skills while learning new tools.</p></div>
+</section>
+</main>
+
+<footer>© 2026 Kenshin Lahom. All rights reserved.</footer>
+
+<div id="breach" role="dialog" aria-label="Secret"><div><h4>SYSTEM BREACH [X]</h4><pre class="mono" id="log"></pre></div></div>
+
+<script>
+(function(){
+  var track=document.getElementById('track');
+  function step(d){track.scrollBy({left:d*(track.firstElementChild.offsetWidth+16),behavior:'smooth'})}
+  document.getElementById('prev').onclick=function(){step(-1)};
+  document.getElementById('next').onclick=function(){step(1)};
+
+  var clicks=0,timer,b=document.getElementById('breach'),log=document.getElementById('log');
+  var lines=['> INITIATING SANDEVISTAN PROTOCOL...','> ACCESS GRANTED. WELCOME, CHOOM.','> YOU FOUND THE SECRET. NICE REFLEXES.','','[ tap anywhere to close ]'];
+  function run(){
+    b.classList.add('on');log.textContent='';var i=0;
+    (function next(){if(i>=lines.length||!b.classList.contains('on'))return;log.textContent+=lines[i++]+'\n';setTimeout(next,650)})();
+  }
+  document.getElementById('logo').onclick=function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+    clicks++;clearTimeout(timer);timer=setTimeout(function(){clicks=0},1500);
+    if(clicks>=5){clicks=0;run()}
+  };
+  b.onclick=function(){b.classList.remove('on')};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')b.classList.remove('on')});
+})();
+</script>
+</body>
+</html>
